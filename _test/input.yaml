@@ -1,0 +1,18 @@
+---
+Name: John
+Surname: Doe
+Developer: true
+SysAdmin: false
+PhoneNo: 555-123456
+Emails:
+- Name: Support to OpenStack
+  Address: openstack.support@example.com
+- Name: Support to GitLab
+  Address: gitlab.support@example.com
+Experiences:
+- From: 01/01/1990
+  To: 31/12/2009
+  Description: Software Developer
+- From: 01/01/2010
+  To: 31/12/2020
+  Description: Senior Software Developer
