@@ -1,6 +1,6 @@
 # A Golang template engine
 
-`temaple`: use Golang templates on the command line and hydrate them with variable values provided via YAML or JSON files.
+`template`: use Golang templates on the command line and hydrate them with variable values provided via YAML or JSON files.
 
 ### Usage
 
