@@ -1,4 +1,4 @@
-package formatting
+package extensions
 
 import "text/template"
 
@@ -6,6 +6,7 @@ func FuncMap() template.FuncMap {
 	return template.FuncMap{
 		"include":   Include,
 		"dump":      DumpArgs,
+		"api":       API,
 		"blue":      Blue,
 		"cyan":      Cyan,
 		"green":     Green,
