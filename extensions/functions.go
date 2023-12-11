@@ -4,9 +4,16 @@ import "text/template"
 
 func FuncMap() template.FuncMap {
 	return template.FuncMap{
-		"include":   Include,
-		"dump":      DumpArgs,
-		"api":       API,
+		"include":  Include,
+		"dump":     DumpArgs,
+		"api":      CallAPI,
+		"fileSize": FileSize,
+		"dirSize":  DirSize,
+		"isFile":   IsFile,
+		"isDir":    IsDir,
+		"listDir":  ListDir,
+		// "fetch":     FetchHTML,
+		// "html":      HTML,
 		"blue":      Blue,
 		"cyan":      Cyan,
 		"green":     Green,

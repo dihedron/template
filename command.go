@@ -15,7 +15,7 @@ import (
 )
 
 type Command struct {
-	Input      *Input   `short:"i" long:"input" description:"The input data, either as an inline JSON value or as a @file (in JSON or YAML format)." otional:"yes" env:"TEMPLATE_INPUT"`
+	Input      *Input   `short:"i" long:"input" description:"The input data, either as an inline JSON value or as a @file (in JSON or YAML format)." optional:"yes" env:"TEMPLATE_INPUT"`
 	Templates  []string `short:"t" long:"template" description:"The paths of all the templates and subtemplates on disk; the main template must be the first." required:"yes"`
 	Output     string   `short:"o" long:"output" description:"The path to the output file." optional:"yes" env:"TEMPLATE_OUTPUT"`
 	LogEnabled bool     `short:"l" long:"log-enabled" description:"Whether to log to STDERR." optional:"yes" env:"TEMPLATE_LOG_ENABLED"`

@@ -15,7 +15,7 @@ type Response struct {
 	Payload any                 `json:"payload"`
 }
 
-func API(url string) (*Response, error) {
+func CallAPI(url string) (*Response, error) {
 	response, err := http.Get(url)
 	if err != nil {
 		return nil, err
@@ -30,8 +30,6 @@ func API(url string) (*Response, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	
 
 	return &Response{
 		URL:     url,

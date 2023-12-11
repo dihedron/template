@@ -24,7 +24,7 @@ Include script with 2-spaces indentation:
 Include script as is:
 {{ include "_test/included.sh" . }}
 
-We are also running an API call to a REST API:
+We can also place a GET call to a REST API (JSON); the response gives us access to the URL, the headers and to the payload as an object:
 {{ $response := api "https://openlibrary.org/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json" }} 
 * URL: {{ $response.URL }}
 * Status Code: {{ $response.Code }}
@@ -36,3 +36,11 @@ We are also running an API call to a REST API:
 ** {{ $isdn }}: {{ range $property, $value := $book }}
 *** {{ $property }} => {{ $value -}}
 {{ end }}{{ end }}
+
+Environment:
+HTTP_PROXY={{ env "HTTP_PROXY" }}
+
+Directory:
+{{$files := listDir "."}}{{range $file := $files}}
+ - {{if isFile $file}}{{$file}} (size: {{fileSize $file}} bytes){{end}}{{ end}}
+
