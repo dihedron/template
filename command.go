@@ -22,7 +22,7 @@ type Command struct {
 }
 
 type Input struct {
-	Data interface{}
+	Data any
 }
 
 func (i *Input) UnmarshalFlag(value string) error {
