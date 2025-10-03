@@ -10,8 +10,8 @@ github.com/clipperhouse/uax29/v2 v2.2.0 h1:ChwIKnQN3kcZteTXMgb1wztSgaU+ZemkgWdoh
 github.com/clipperhouse/uax29/v2 v2.2.0/go.mod h1:EFJ2TJMRUaplDxHKj1qAEhCtQPW2tJSwu5BF98AuoVM=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/dihedron/rawdata v1.0.1 h1:krxp7LKiW+fD1klrLluCbUxoEmS6ZxNBCVxfivwBFB0=
-github.com/dihedron/rawdata v1.0.1/go.mod h1:oA0WZ+4vlBe7Y6rAemT9Ifg3P4zP3jy7N1ObhY4f3hY=
+github.com/dihedron/rawdata v1.0.2 h1:lhVpRS+2jgLmizEx4Xvh2USUE8q0HhSYsHv2nr7QCxs=
+github.com/dihedron/rawdata v1.0.2/go.mod h1:bObJlKjM5UwXCfxyQJX3GJAq+/p7kJ7FwqtHaPcYUVY=
 github.com/frankban/quicktest v1.14.6 h1:7Xjx+VpznH+oBnejlPUj8oUpdxnVs4f8XU8WnHkI4W8=
 github.com/frankban/quicktest v1.14.6/go.mod h1:4ptaffx2x8+WTWXmUCuVU6aPUX1/Mz7zb5vbUoiM6w0=
 github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
