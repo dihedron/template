@@ -19,7 +19,7 @@ $> template -i=@_test/input.yaml -t=_test/outer.tpl -t=_test/inner.tpl
 or 
 
 ```bash
-$> cat _test/input.json | mason hydrate --template=_test/outer.tpl --template=_test/inner.tpl
+$> cat _test/input.json | template -t=_test/outer.tpl -t=_test/inner.tpl
 ```
 
 If no output parameter is specified, `template` will write to STDOUT by default; thus, it can be used with pipes (`|`) where the STDIN is the set of input variables funnelled into `template` and the output goes to SDOUT and can therefore be piped into other commands.
