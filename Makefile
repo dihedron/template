@@ -1,17 +1,21 @@
-default: build
+_APPLICATION_NAME := template
+_APPLICATION_VERSION_MAJOR := 0
+_APPLICATION_VERSION_MINOR := 0
+_APPLICATION_VERSION_PATCH := 1
+_APPLICATION_VERSION=$(_APPLICATION_VERSION_MAJOR).$(_APPLICATION_VERSION_MINOR).$(_APPLICATION_VERSION_PATCH)
+_APPLICATION_DESCRIPTION := Golang template engine.
+_APPLICATION_COPYRIGHT := 2025 © Andrea Funtò
+_APPLICATION_LICENSE := MIT
+_APPLICATION_LICENSE_URL := https://opensource.org/license/mit/
+_APPLICATION_VERSION=$(_APPLICATION_VERSION_MAJOR).$(_APPLICATION_VERSION_MINOR).$(_APPLICATION_VERSION_PATCH)
+_APPLICATION_MAINTAINER=dihedron.dev@gmail.com
+_APPLICATION_VENDOR=dihedron.dev@gmail.com
+_APPLICATION_PRODUCER_URL=https://github.com/dihedron/
+_APPLICATION_DOWNLOAD_URL=$(_APPLICATION_PRODUCER_URL)$(_APPLICATION_NAME)
+_APPLICATION_METADATA_PACKAGE=$$(grep "module .*" go.mod | sed 's/module //gi')/metadata
+#_APPLICATION_DOTENV_VAR_NAME=
 
-.PHONY: build
-build:
-	goreleaser build --snapshot --single-target --rm-dist
 
-.PHONY: clean
-clean:
-	@rm -rf dist/ 
-
-.PHONY: test-json
-test-json: build
-	dist/template_linux_amd64_v1/template --template=_test/outer.tpl --template=_test/inner.tpl --input=@_test/input.json --log-enabled
-
-.PHONY: test-yaml
-test-yaml: build
-	dist/template_linux_amd64_v1/template --template=_test/outer.tpl --template=_test/inner.tpl --input=@_test/input.yaml --log-enabled
+include help.mk
+include go.mk
+-include custom.mk
