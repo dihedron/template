@@ -365,4 +365,5 @@ go-supported-platforms: ## show supported build platforms
 .PHONY: go-how-to-tag
 go-how-to-tag: ## show how to set a tag before releaser
 	@echo "git tag -a v1.2.3 -m \"Your message here\""
+	@echo "git push origin tag v1.2.3"
 	@echo "make [go-]release"
