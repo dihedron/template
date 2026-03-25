@@ -5,6 +5,10 @@ on:
     branches:
       - "**"
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,8 +32,5 @@ jobs:
 
       - name: Run Makefile target
         run: make
-        permissions:
-          contents: read
-          pull-requests: write
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
