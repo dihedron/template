@@ -13,11 +13,11 @@ import (
 // provides a way to prepend a constant string to each line
 // in the output. The usage is as follows:
 // {{ include <template> [<pipeline>] [<padding>] }}
-func Include(args ...interface{}) (string, error) {
+func Include(args ...any) (string, error) {
 	var (
 		file    string
 		padding string
-		dynamic map[string]interface{}
+		dynamic map[string]any
 	)
 	if args == nil {
 		return "", errors.New("include: at least the template path must be specified")
@@ -31,7 +31,7 @@ func Include(args ...interface{}) (string, error) {
 				return "", errors.New("include: the first argument (template) must be of type string")
 			}
 		} else if i == 1 {
-			if dynamic, ok = arg.(map[string]interface{}); !ok {
+			if dynamic, ok = arg.(map[string]any); !ok {
 				if padding, ok = arg.(string); !ok {
 					return "", errors.New("include: the second argument must either the pipeline or the padding")
 				}

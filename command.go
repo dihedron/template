@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"io"
+	"maps"
 	"os"
 	"path"
 	"path/filepath"
@@ -70,12 +71,8 @@ func (cmd *Command) Execute(args []string) error {
 
 	// populate the functions map
 	functions := template.FuncMap{}
-	for k, v := range extensions.FuncMap() {
-		functions[k] = v
-	}
-	for k, v := range sprig.FuncMap() {
-		functions[k] = v
-	}
+	maps.Copy(functions, extensions.FuncMap())
+	maps.Copy(functions, sprig.FuncMap())
 
 	// parse the templates
 	main := path.Base(cmd.Templates[0])

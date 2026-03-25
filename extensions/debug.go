@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func toJSON(v any) string {
@@ -11,14 +12,14 @@ func toJSON(v any) string {
 	return string(s)
 }
 
-func DumpArgs(args ...interface{}) (string, error) {
-	result := ""
+func DumpArgs(args ...any) (string, error) {
+	var result strings.Builder
 	if args != nil {
 		for i, arg := range args {
-			result += fmt.Sprintf("%d => '%s' (%T)\n", i, toJSON(arg), arg)
+			result.WriteString(fmt.Sprintf("%d => '%s' (%T)\n", i, toJSON(arg), arg))
 		}
-		fmt.Fprintln(os.Stderr, result)
-		return result, nil
+		fmt.Fprintln(os.Stderr, result.String())
+		return result.String(), nil
 	} else {
 		return "<empty>", nil
 	}

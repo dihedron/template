@@ -4,58 +4,58 @@ import (
 	"github.com/jedib0t/go-pretty/v6/text"
 )
 
-func HighBlue(v interface{}) string {
+func HighBlue(v any) string {
 	return text.FgHiBlue.Sprint(v)
 }
 
-func HighCyan(v interface{}) string {
+func HighCyan(v any) string {
 	return text.FgHiCyan.Sprint(v)
 }
 
-func HighGreen(v interface{}) string {
+func HighGreen(v any) string {
 	return text.FgHiGreen.Sprint(v)
 }
 
-func HighMagenta(v interface{}) string {
+func HighMagenta(v any) string {
 	return text.FgHiMagenta.Sprint(v)
 }
 
-func HighRed(v interface{}) string {
+func HighRed(v any) string {
 	return text.FgHiRed.Sprint(v)
 }
 
-func HighYellow(v interface{}) string {
+func HighYellow(v any) string {
 	return text.FgHiYellow.Sprint(v)
 }
 
-func HighWhite(v interface{}) string {
+func HighWhite(v any) string {
 	return text.FgHiWhite.Sprint(v)
 }
 
-func Blue(v interface{}) string {
+func Blue(v any) string {
 	return text.FgBlue.Sprint(v)
 }
 
-func Cyan(v interface{}) string {
+func Cyan(v any) string {
 	return text.FgCyan.Sprint(v)
 }
 
-func Green(v interface{}) string {
+func Green(v any) string {
 	return text.FgGreen.Sprint(v)
 }
 
-func Magenta(v interface{}) string {
+func Magenta(v any) string {
 	return text.FgMagenta.Sprint(v)
 }
 
-func Red(v interface{}) string {
+func Red(v any) string {
 	return text.FgRed.Sprint(v)
 }
 
-func Yellow(v interface{}) string {
+func Yellow(v any) string {
 	return text.FgYellow.Sprint(v)
 }
 
-func White(v interface{}) string {
+func White(v any) string {
 	return text.FgWhite.Sprint(v)
 }
