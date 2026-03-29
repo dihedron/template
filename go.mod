@@ -4,9 +4,11 @@ go 1.26.1
 
 require (
 	github.com/Masterminds/sprig/v3 v3.3.0
+	github.com/dihedron/overlay v0.0.2
 	github.com/dihedron/rawdata v1.0.3
 	github.com/jedib0t/go-pretty/v6 v6.7.8
 	github.com/jessevdk/go-flags v1.6.1
+	github.com/joho/godotenv v1.5.1
 	golang.org/x/exp v0.0.0-20260312153236-7ab1446f8b90
 )
 

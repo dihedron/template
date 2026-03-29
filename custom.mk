@@ -21,8 +21,8 @@ clean: ## clean the binary directory
 
 .PHONY: test-json
 test-json: compile ## test against a JSON file
-	dist/template_linux_amd64_v1/template --template=_test/outer.tpl --template=_test/inner.tpl --input=@_test/input.json --log-enabled
+	dist/template_linux_amd64_v1/template --template=_test/outer.tpl --template=_test/inner.tpl --input=@_test/input.json
 
 .PHONY: test-yaml
 test-yaml: compile ## test against a YAML file
-	dist/template_linux_amd64_v1/template --template=_test/outer.tpl --template=_test/inner.tpl --input=@_test/input.yaml --log-enabled
+	dist/template_linux_amd64_v1/template --template=_test/outer.tpl --template=_test/inner.tpl --input=@_test/input.yaml

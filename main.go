@@ -1,9 +1,8 @@
 package main
 
 import (
+	"fmt"
 	"os"
-
-	"log/slog"
 
 	"github.com/dihedron/template/metadata"
 	"github.com/jessevdk/go-flags"
@@ -23,11 +22,19 @@ func main() {
 
 	command := Command{}
 	if args, err := flags.Parse(&command); err != nil {
-		os.Exit(1)
-	} else {
-		if command.LogEnabled {
-			slog.SetDefault(slog.New(slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{Level: slog.LevelInfo})))
+		switch flagsErr := err.(type) {
+		case flags.ErrorType:
+			if flagsErr == flags.ErrHelp {
+				os.Exit(0)
+			}
+			os.Exit(1)
+		case *flags.Error:
+			fmt.Fprintf(os.Stderr, "error: %s (%T)\n", err, err)
+			os.Exit(1)
+		default:
+			os.Exit(1)
 		}
+	} else {
 		err = command.Execute(args)
 		if err != nil {
 			os.Exit(1)
