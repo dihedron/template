@@ -223,18 +223,16 @@ func downloadFTP(rawURL string) ([]byte, error) {
 		}
 	}
 
-	c, err := ftp.Dial(host, ftp.DialWithTimeout(10*time.Second))
+	var c *ftp.ServerConn
+	if useTLS {
+		c, err = ftp.Dial(host, ftp.DialWithTimeout(10*time.Second), ftp.DialWithTLS(&tls.Config{InsecureSkipVerify: true}))
+	} else {
+		c, err = ftp.Dial(host, ftp.DialWithTimeout(10*time.Second))
+	}
 	if err != nil {
 		return nil, fmt.Errorf("ftp dial: %w", err)
 	}
 	defer c.Quit()
-
-	if useTLS {
-		err = c.AuthTLS(&tls.Config{InsecureSkipVerify: true})
-		if err != nil {
-			return nil, fmt.Errorf("ftp auth tls: %w", err)
-		}
-	}
 
 	// Login with anonymous as default if user is empty
 	if user == "" {

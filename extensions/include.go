@@ -26,11 +26,12 @@ func Include(args ...any) (string, error) {
 	for i, arg := range args {
 		var ok bool
 
-		if i == 0 {
+		switch i {
+		case 0:
 			if file, ok = arg.(string); !ok {
 				return "", errors.New("include: the first argument (template) must be of type string")
 			}
-		} else if i == 1 {
+		case 1:
 			if dynamic, ok = arg.(map[string]any); !ok {
 				if padding, ok = arg.(string); !ok {
 					return "", errors.New("include: the second argument must either the pipeline or the padding")
@@ -38,7 +39,7 @@ func Include(args ...any) (string, error) {
 			} else {
 				pipelineFound = true
 			}
-		} else if i == 2 {
+		case 2:
 			if !pipelineFound {
 				return "", errors.New("include: the pipeline has not been provided")
 			}
